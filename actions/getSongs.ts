@@ -9,7 +9,7 @@ const getSongs = async (): Promise<Song[]> => {
 	});
 	const { data, error } = await supabase.from('songs').select('*').order('created_at', { ascending: false });
 	if (error) {
-		console.error(error);
+		console.error("Some error occurred while getting songs", error);
 	}
 	return (data as any) || [];
 };
