@@ -3,10 +3,11 @@ import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 
 
-const getSongsByUserId = async (): Promise<Song[]> => {
+const getLikedSongs = async (): Promise<Song[]> => {
 	const supabase = createServerComponentClient({
 		cookies: cookies
 	});
+
 	const {
 		data: sessionData,
 		error: sessionError
@@ -21,11 +22,17 @@ const getSongsByUserId = async (): Promise<Song[]> => {
 	const {
 		data,
 		error
-	} = await supabase.from("songs").select("*").eq("user_id", sessionData.session?.user?.id).order("created_at", { ascending: false });
+	} = await supabase.from("liked_songs").select("*, songs(*)").eq("user_id", sessionData.session?.user?.id).order("created_at", { ascending: false });
 	if (error) {
-		console.error("Some error occurred while getting songs by user id", error.message);
+		console.error("Some error occurred while getting liked songs for user", error.message);
+		return [];
 	}
-	return (data as any) || [];
+	if (!data) {
+		return [];
+	}
+	return data.map((item) => ({
+		...item.songs
+	}));
 };
 
-export default getSongsByUserId;
+export default getLikedSongs;
