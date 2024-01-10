@@ -72,7 +72,7 @@ const UploadModal = () => {
 			}
 			const {
 				error: supabaseError
-			} = await supabaseClient.from('songs').insert({
+			} = await supabaseClient.from("songs").insert({
 				user_id: user.id,
 				title: values.title,
 				author: values.author,
@@ -85,7 +85,7 @@ const UploadModal = () => {
 			}
 			router.refresh();
 			setIsLoading(false);
-			toast.success('Song uploaded successfully');
+			toast.success("Song uploaded successfully");
 			reset();
 			uploadModal.onClose();
 		} catch (error) {

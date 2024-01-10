@@ -30,18 +30,18 @@ export const MyUserContextProvider = (props: Props) => {
 	const [isLoadingData, setIsLoadingData] = useState(false);
 	const [userDetails, setUserDetails] = useState<UserDetails | null>(null);
 	const [subscription, setSubscription] = useState<Subscription | null>(null);
-	const getUserDetails = () => supabase.from('users').select('*').single();
-	const getSubscription = () => supabase.from('subscriptions').select('*, prices(*, products(*))').in('status', ['trialing', 'active']).single();
+	const getUserDetails = () => supabase.from("users").select("*").single();
+	const getSubscription = () => supabase.from("subscriptions").select("*, prices(*, products(*))").in("status", ["trialing", "active"]).single();
 	useEffect(() => {
 		if (user && !isLoadingData && !userDetails && !subscription) {
 			setIsLoadingData(true);
 			Promise.allSettled([getUserDetails(), getSubscription()]).then((results) => {
 				const userDetailsPromise = results[0];
 				const subscriptionPromise = results[1];
-				if (userDetailsPromise.status === 'fulfilled') {
+				if (userDetailsPromise.status === "fulfilled") {
 					setUserDetails(userDetailsPromise.value.data as UserDetails);
 				}
-				if (subscriptionPromise.status === 'fulfilled') {
+				if (subscriptionPromise.status === "fulfilled") {
 					setSubscription(subscriptionPromise.value.data as Subscription);
 				}
 				setIsLoadingData(false);
@@ -64,7 +64,7 @@ export const MyUserContextProvider = (props: Props) => {
 export const useUser = () => {
 	const context = useContext(UserContext);
 	if (context === undefined) {
-		throw new Error('useUser must be used within MyUserContextProvider');
+		throw new Error("useUser must be used within MyUserContextProvider");
 	}
 	return context;
 };
