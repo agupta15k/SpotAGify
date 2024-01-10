@@ -12,7 +12,7 @@ const getSongsByTitle = async (title: string): Promise<Song[]> => {
 		const allSongs = await getSongs();
 		return allSongs;
 	}
-	const { data, error } = await supabase.from('songs').select('*').ilike('title', `%${title}%`).order('created_at', { ascending: false });
+	const { data, error } = await supabase.from("songs").select("*").ilike("title", `%${title}%`).order("created_at", { ascending: false });
 	if (error) {
 		console.error("Some error occurred while getting songs by title", error);
 	}
