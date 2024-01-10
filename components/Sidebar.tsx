@@ -7,36 +7,44 @@ import { BiSearch } from "react-icons/bi";
 import Box from "./Box";
 import SidebarItem from "./SidebarItem";
 import Library from "./Library";
+import { Song } from "@/types";
+import usePlayer from "@/hooks/usePlayer";
+import { twMerge } from "tailwind-merge";
 
 interface SidebarProps {
 	children: React.ReactNode;
+	songs: Song[];
 }
 
 const Sidebar: React.FC<SidebarProps> = ({
-	children
+	children,
+	songs
 }) => {
 	const pathname = usePathname();
+	const player = usePlayer();
 	const routes = useMemo(() => [
 		{
 			icon: HiHome,
-			label: 'Home',
-			active: pathname !== '/search',
-			href: '/'
+			label: "Home",
+			active: pathname !== "/search",
+			href: "/"
 		},
 		{
 			icon: BiSearch,
-			label: 'Search',
-			active: pathname === '/search',
-			href: '/search'
+			label: "Search",
+			active: pathname === "/search",
+			href: "/search"
 		}
 	], [pathname]);
 
 	return (
 		<div
-			className="
-				flex
-				h-full
-			"
+			className={
+				twMerge(`
+					flex
+					h-full
+				`, player.activeId && "h-[calc(100%-80px)]")
+			}
 		>
 			<div
 				className="
@@ -60,10 +68,10 @@ const Sidebar: React.FC<SidebarProps> = ({
 							py-4
 						"
 					>
-						{routes.map((item) => (
+						{routes.map((route) => (
 							<SidebarItem
-								key={item.label}
-								{...item}
+								key={route.label}
+								{...route}
 							/>
 						))}
 					</div>
@@ -74,7 +82,7 @@ const Sidebar: React.FC<SidebarProps> = ({
 						h-full
 					"
 				>
-					<Library/>
+					<Library songs={songs}/>
 				</Box>
 			</div>
 			<main
