@@ -71,17 +71,23 @@ The option to subscribe to a premium membership presents itself, offering the fl
 <h2 id = "appInAction"> Application in Action </h2>
 
 <img width="500" alt="login-page" src="https://github.com/agupta15k/MyOwnSpotify/assets/112216701/94747484-2bbc-4d82-b598-08def385824a">
-
+<br/>
+<br/>
 <img width="500" alt="main-page" src="https://github.com/agupta15k/MyOwnSpotify/assets/112216701/9e2ba0d6-04a8-41dd-a301-30e9864056d7">
-
+<br/>
+<br/>
 <img width="500" alt="music-playing" src="https://github.com/agupta15k/MyOwnSpotify/assets/112216701/ed14c888-f41e-4f0d-a2a2-da1af8d6fcd7">
-
+<br/>
+<br/>
 <img width="500" alt="search-page" src="https://github.com/agupta15k/MyOwnSpotify/assets/112216701/810fe680-cb5c-4f02-b166-5a30d006dd7e">
-
+<br/>
+<br/>
 <img width="500" alt="liked-page" src="https://github.com/agupta15k/MyOwnSpotify/assets/112216701/970a0fc3-99ef-4fda-b105-909591b5cd5f">
-
+<br/>
+<br/>
 <img width="500" alt="premium-page" src="https://github.com/agupta15k/MyOwnSpotify/assets/112216701/b078a24b-c876-4318-8346-0518bac716d7">
-
+<br/>
+<br/>
 <img width="500" alt="payments-page" src="https://github.com/agupta15k/MyOwnSpotify/assets/112216701/98c00745-092d-4e80-bf56-5a69fe017f27">
 
 <h2 id = "tech"> Technologies :electron: </h2>
