@@ -90,11 +90,11 @@ const Library: React.FC<LibraryProps> = ({
 					px-3
 				"
 			>
-				{songs.map((item) => (
+				{songs.map((song) => (
 					<MediaItem
 						onClick={(id) => {onPlay(id)}}
-						key={item.id}
-						data={item}
+						key={song.id}
+						data={song}
 					/>
 				))}
 			</div>

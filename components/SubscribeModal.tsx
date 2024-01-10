@@ -67,18 +67,18 @@ const SubscribeModal: React.FC<SubscribeModalProps> = ({
 	if (products.length) {
 		content = (
 			<div>
-				{products.map((item) => {
-					if (!item.prices?.length) {
+				{products.map((product) => {
+					if (!product.prices?.length) {
 						return (
 							<div
-								key={item.id}
+								key={product.id}
 							>
 								No prices available
 							</div>
 						);
 					}
 					return (
-						item.prices.map((price) => (
+						product.prices.map((price) => (
 							<Button
 								key={price.id}
 								onClick={() => handleCheckout(price)}

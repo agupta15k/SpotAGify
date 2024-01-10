@@ -38,11 +38,11 @@ const PageContent: React.FC<PageContentProps> = ({
 				mt-5
 			"
 		>
-			{songs.map((item) => (
+			{songs.map((song) => (
 				<SongItem
-					key={item.id}
+					key={song.id}
 					onClick={(id) => onPlay(id)}
-					data={item}
+					data={song}
 				/>
 			))}
 		</div>
