@@ -1,5 +1,5 @@
 <h1 align="center">
-  <a href="https://github.com/agupta15k/MyOwnSpotify">
+  <a href="https://my-own-spotify.vercel.app/">
     SpotAGify
   </a>
 </h1>
