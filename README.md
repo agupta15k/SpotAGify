@@ -10,8 +10,8 @@
   <a href="https://github.com/agupta15k/MyOwnSpotify">
     <img src="https://img.shields.io/github/repo-size/agupta15k/MyOwnSpotify?color=brightgreen">
   </a>
-  <a href="https://zenodo.org/badge/latestdoi/569499359">
-    <img src="https://zenodo.org/badge/569499359.svg" alt="DOI">
+  <a href="https://zenodo.org/doi/10.5281/zenodo.10480829">
+    <img src="https://zenodo.org/badge/739390782.svg" alt="DOI">
   </a>
   <a href="https://github.com/agupta15k/MyOwnSpotify/tags">
     <img src="https://img.shields.io/github/v/tag/agupta15k/MyOwnSpotify?color=9cf">
