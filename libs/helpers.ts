@@ -33,7 +33,7 @@ export const postData = async ({
 		console.error("Error occurred in POST request", {url, data, res});
 		throw new Error(res.statusText);
 	}
-	return res.json;
+	return res.json();
 };
 
 export const toDateTime = (seconds: number) => {
