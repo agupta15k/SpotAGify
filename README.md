@@ -1,5 +1,5 @@
 <h1 align="center">
-  <a href="https://github.com/agupta15k/ncsu_se_fall22_22_pr_2">
+  <a href="https://github.com/agupta15k/MyOwnSpotify">
     SpotAGify
   </a>
 </h1>
