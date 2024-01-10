@@ -39,9 +39,9 @@ const SearchContent: React.FC<SearchContentProps> = ({
 				px-6
 			"
 		>
-			{songs.map((item) => (
+			{songs.map((song) => (
 				<div
-					key={item.id}
+					key={song.id}
 					className="
 						flex
 						items-center
@@ -54,10 +54,10 @@ const SearchContent: React.FC<SearchContentProps> = ({
 					>
 						<MediaItem
 							onClick={(id) => {onPlay(id)}}
-							data={item}
+							data={song}
 						/>
 					</div>
-					<LikeButton songId={item.id}/>
+					<LikeButton songId={song.id}/>
 				</div>
 			))}
 		</div>

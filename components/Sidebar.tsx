@@ -68,10 +68,10 @@ const Sidebar: React.FC<SidebarProps> = ({
 							py-4
 						"
 					>
-						{routes.map((item) => (
+						{routes.map((route) => (
 							<SidebarItem
-								key={item.label}
-								{...item}
+								key={route.label}
+								{...route}
 							/>
 						))}
 					</div>
